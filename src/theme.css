@@ -1,0 +1,204 @@
+/* ==========================================================================
+   TEMA "COSTA DE ARICA" – rediseño visual (EV03, Actividad 3)
+   Mar #0B3A4A · Caleta #0F8B8D · Sol #F5B335 · Niebla #EEF2F3 · Coral #D6453D
+   Tipografías: Bricolage Grotesque (títulos y cifras) + Figtree (texto)
+   Se carga después de App.css y sobrescribe sus componentes.
+   ========================================================================== */
+
+:root {
+  --mar: #0B3A4A;
+  --mar-2: #124B5E;
+  --caleta: #0F8B8D;
+  --caleta-dark: #0A6C6E;
+  --caleta-soft: #E3F3F2;
+  --sol: #F5B335;
+  --sol-soft: #FFF3D6;
+  --niebla: #EEF2F3;
+  --linea: #DAE3E6;
+  --tinta: #14262E;
+  --tinta-2: #4A646D;
+  --coral: #D6453D;
+  --coral-soft: #FCE9E7;
+  --font-display: 'Bricolage Grotesque Variable', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Figtree Variable', 'Segoe UI', system-ui, sans-serif;
+
+  --vet-primary: var(--caleta);
+  --vet-primary-dark: var(--caleta-dark);
+  --vet-primary-soft: var(--caleta-soft);
+  --vet-accent: var(--coral);
+  --vet-accent-soft: var(--coral-soft);
+  --vet-bg: var(--niebla);
+  --vet-text: var(--tinta);
+  --vet-muted: var(--tinta-2);
+}
+
+html, body, button, input, select, textarea { font-family: var(--font-body); }
+html, body { background: var(--niebla); color: var(--tinta); font-size: 15px; }
+h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.01em; }
+.kpi-value, .sec-tec { font-variant-numeric: tabular-nums; }
+.data-table td, .data-table th { font-variant-numeric: tabular-nums; }
+
+:focus-visible { outline: 3px solid var(--sol); outline-offset: 2px; }
+
+/* ------------------------------ LOGIN ------------------------------------ */
+.login-wrapper { background: var(--niebla); padding: 24px; }
+.login-grid {
+  max-width: 1120px; grid-template-columns: 1.1fr 1fr; border-radius: 22px;
+  border: 1px solid var(--linea); box-shadow: 0 30px 60px -30px rgba(11, 58, 74, .35);
+}
+.login-brand { background: var(--mar); padding: 0; min-height: 640px; position: relative; overflow: hidden; justify-content: flex-start; }
+.login-brand-text { padding: 40px 40px 0; position: relative; z-index: 2; }
+.brand-badge { background: rgba(255,255,255,.1); color: #CFE3E8; text-transform: none; letter-spacing: 0; font-size: 12.5px; font-weight: 600; padding: 6px 12px; }
+.login-brand h1 { font-family: var(--font-display); font-size: 46px; line-height: 1.02; font-weight: 800; margin: 20px 0 12px; letter-spacing: -0.03em; }
+.login-brand p { color: #B9D3DA; font-size: 15px; max-width: 420px; }
+.login-art { display: block; width: 100%; height: auto; margin-top: -10px; position: relative; z-index: 1; }
+.role-demo-box { background: transparent; border: none; padding: 0; margin-top: 26px; position: relative; z-index: 2; }
+.role-demo-box h3 { text-transform: none; letter-spacing: 0; font-size: 14px; font-weight: 600; color: #CFE3E8; font-family: var(--font-body); margin-bottom: 10px; }
+.role-demo-buttons { grid-template-columns: 1fr 1fr; gap: 8px; }
+.btn-role-demo {
+  background: rgba(255,255,255,.08); color: #FFFFFF; border: 1px solid rgba(255,255,255,.16);
+  border-radius: 10px; padding: 10px 12px; font-size: 13.5px; font-weight: 700; transition: background .15s, border-color .15s;
+}
+.btn-role-demo:hover { background: rgba(255,255,255,.16); border-color: var(--sol); transform: none; box-shadow: none; }
+.btn-role-demo span { color: #A9C7CF; font-size: 12px; }
+.login-brand-footer { position: relative; z-index: 2; padding: 14px 40px 28px; margin-top: auto; background: #074F52; }
+.login-brand .stack-pills { margin: 0; }
+.stack-pill { background: rgba(255,255,255,.09); color: #CFE3E8; font-weight: 600; border-radius: 6px; }
+.login-form-side { padding: 48px 44px; }
+.login-form-side h2 { font-size: 30px; letter-spacing: -0.02em; }
+.login-subtitle { color: var(--tinta-2); font-size: 14px; }
+
+/* ------------------------------ FORMULARIOS ------------------------------ */
+.form-group label { font-weight: 600; color: var(--tinta); font-size: 13px; }
+.form-control { border: 1.5px solid #C5D2D6; border-radius: 8px; padding: 10px 12px; font-size: 14.5px; }
+.form-control:hover { border-color: #8FA6AD; }
+.form-control:focus { border-color: var(--caleta); box-shadow: 0 0 0 3px rgba(15,139,141,.18); }
+
+.btn-primary-vet { background: var(--caleta); border-radius: 8px; font-weight: 700; }
+.btn-primary-vet:hover { background: var(--caleta-dark); transform: none; box-shadow: none; }
+.btn-outline-vet { color: var(--caleta-dark); border: 1.5px solid #9CCFCF; border-radius: 8px; background: #fff; }
+.btn-outline-vet:hover { background: var(--caleta-soft); }
+.btn-secondary-vet { background: #E3EAEC; color: var(--tinta); border-radius: 8px; }
+.btn-danger-vet { background: var(--coral); border-radius: 8px; }
+.btn-danger-vet:hover { background: #B93832; transform: none; box-shadow: none; }
+
+.alert-box { border-radius: 10px; font-weight: 600; border-left-width: 4px; }
+.alert-success { background: #E4F5EC; color: #155B38; border-left-color: #1E9E5E; }
+.alert-error { background: var(--coral-soft); color: #8C2620; border-left-color: var(--coral); }
+.alert-warning { background: var(--sol-soft); color: #7A4E07; border-left-color: var(--sol); }
+
+/* ------------------------------ MENÚ LATERAL ----------------------------- */
+.app-shell { grid-template-columns: 268px 1fr; }
+.sidebar { background: var(--mar); border-right: none; padding: 22px 14px 16px; }
+.sidebar-brand { display: flex; align-items: center; gap: 12px; padding: 2px 8px 18px; border-bottom: 1px solid rgba(255,255,255,.1); margin-bottom: 14px; }
+.sidebar-logo { width: 40px; height: 40px; border-radius: 12px; background: var(--sol); color: var(--mar); display: grid; place-items: center; flex-shrink: 0; }
+.sidebar-brand h2 { font-size: 19px; font-weight: 800; color: #fff; margin: 0; letter-spacing: -0.02em; }
+.sidebar-brand span { color: #8FB3BF; font-size: 12.5px; }
+.sesion-box { padding: 10px 12px; border-radius: 10px; background: rgba(255,255,255,.07); margin-bottom: 8px; }
+.sesion-box small { color: #8FB3BF; font-size: 12px; }
+.sesion-box strong { display: block; color: #fff; font-size: 14px; font-weight: 700; margin: 1px 0 6px; }
+.sesion-box .tag { background: var(--sol); color: var(--mar); }
+.nav-grupo { margin: 16px 0 4px; padding: 0 10px; font-size: 12.5px; font-weight: 600; color: #7FA6B3; }
+.nav-menu { gap: 2px; }
+.nav-btn { display: flex; align-items: center; gap: 11px; border-radius: 9px; padding: 9px 10px; color: #CFE3E8; font-size: 14px; font-weight: 600; position: relative; }
+.nav-btn svg { flex-shrink: 0; opacity: .85; }
+.nav-btn .nav-text { flex: 1; text-align: left; line-height: 1.25; }
+.nav-btn:hover { background: rgba(255,255,255,.07); color: #fff; }
+.nav-btn.active { background: rgba(255,255,255,.12); color: #fff; box-shadow: none; }
+.nav-btn.active::before { content: ''; position: absolute; left: -14px; top: 8px; bottom: 8px; width: 4px; border-radius: 0 4px 4px 0; background: var(--sol); }
+.nav-btn.active svg { opacity: 1; color: var(--sol); }
+.nav-btn.disabled-role { opacity: .4; }
+.nav-badge { background: transparent; color: #8FB3BF; font-size: 12px; font-weight: 600; padding: 0; }
+.nav-badge.alerta { background: var(--sol); color: var(--mar); padding: 1px 7px; border-radius: 99px; font-weight: 800; }
+.sidebar-footer { border-top: 1px solid rgba(255,255,255,.1); color: #7FA6B3; font-size: 12px; }
+
+/* ------------------------------ CABECERA --------------------------------- */
+.topbar { background: var(--niebla); border-bottom: none; box-shadow: none; padding: 22px 32px 6px; position: static; }
+.topbar-left h1 { font-family: var(--font-display); font-size: 32px; font-weight: 800; letter-spacing: -0.03em; color: var(--mar); }
+.topbar-left p { font-size: 14px; color: var(--tinta-2); margin-top: 4px; }
+.status-pill { border-radius: 8px; font-weight: 600; font-size: 12.5px; }
+.status-online { background: var(--caleta-soft); color: var(--caleta-dark); }
+.status-offline { background: var(--sol-soft); color: #7A4E07; }
+.role-switcher-bar { background: #fff; border: 1px solid var(--linea); border-radius: 8px; }
+.role-switcher-bar select { border-color: var(--linea); }
+
+.content-body { padding: 16px 32px 40px; animation: none; max-width: 1440px; }
+
+/* ------------------------------ PANELES Y KPI ---------------------------- */
+.card-panel { background: #fff; border: 1px solid var(--linea); border-radius: 12px; box-shadow: none; padding: 20px 22px; }
+.card-panel h3 { font-size: 18px; font-weight: 700; color: var(--mar); margin-bottom: 14px; }
+
+.kpi-grid {
+  gap: 0; background: #fff; border: 1px solid var(--linea); border-radius: 12px; overflow: hidden; margin-bottom: 20px;
+}
+.kpi-card, .kpi-card.urgent, .kpi-card.warn, .kpi-card.finance {
+  background: transparent; border: none; border-radius: 0; box-shadow: none; padding: 20px 24px;
+  border-left: 1px solid var(--linea);
+}
+.kpi-card:first-child { border-left: none; }
+.kpi-title { text-transform: none; font-size: 14px; font-weight: 600; color: var(--tinta-2); margin-bottom: 4px; }
+.kpi-value { font-family: var(--font-display); font-size: 44px; line-height: 1.05; font-weight: 800; color: var(--mar); letter-spacing: -0.03em; }
+.kpi-card.urgent .kpi-value { color: var(--coral); }
+.kpi-card.warn .kpi-value { color: #B7780B; }
+.kpi-sub { font-size: 13px; color: var(--tinta-2); margin-top: 6px; }
+
+/* ------------------------------ TABLAS ----------------------------------- */
+.data-table { font-size: 14px; }
+.data-table th { background: transparent; color: var(--tinta-2); text-transform: none; letter-spacing: 0; font-size: 13px; font-weight: 700; border-bottom: 2px solid var(--mar); padding: 10px 12px; }
+.data-table td { border-bottom: 1px solid #E6EDEF; padding: 12px; }
+.data-table tr:nth-child(even) td { background: transparent; }
+.data-table tbody tr:hover td { background: #F5F9F9; }
+
+.tag { border-radius: 6px; font-size: 12.5px; font-weight: 700; padding: 3px 9px; }
+.tag-red { background: var(--coral-soft); color: #A8302A; }
+.tag-green { background: #E4F5EC; color: #176B40; }
+.tag-amber { background: var(--sol-soft); color: #7A4E07; }
+.tag-blue { background: #E5EFF7; color: #1D5B9B; }
+.tag-teal { background: var(--caleta-soft); color: var(--caleta-dark); }
+.slot-free { background: #E4F5EC; border-color: #9BD8B8; color: #176B40; }
+
+/* ------------------------------ MÓDULO SEGURIDAD ------------------------- */
+.sec-tabs { background: #DDE7EA; }
+.sec-tabs button.on { color: var(--mar); }
+.sec-card { box-shadow: none; border-color: var(--linea); border-radius: 12px; }
+.sec-card:hover { transform: none; box-shadow: none; border-color: var(--caleta); }
+.sec-icon { background: var(--caleta-soft); border-radius: 10px; }
+.sec-tec { font-family: var(--font-display); color: var(--caleta-dark); }
+.top10-id { background: var(--mar); border-radius: 8px; }
+.top10-item { border-radius: 10px; }
+.top10-item.rel { border-color: var(--coral); background: var(--coral-soft); }
+.top10-item.rel .top10-id { background: var(--coral); }
+
+/* ------------------------------ RESPONSIVE ------------------------------- */
+@media (max-width: 1100px) {
+  .kpi-grid { grid-template-columns: 1fr 1fr; }
+  .kpi-card:nth-child(3) { border-left: none; }
+  .kpi-card:nth-child(n+3) { border-top: 1px solid var(--linea); }
+}
+@media (max-width: 960px) {
+  .login-grid, .app-shell { grid-template-columns: minmax(0, 1fr); }
+  .sidebar, .main-area { min-width: 0; }
+  .nav-menu { display: flex; flex-direction: row; overflow-x: auto; }
+  .sesion-box { display: none; }
+  .login-brand { min-height: 0; }
+  .login-art { margin-top: 12px; }
+  .login-brand h1 { font-size: 38px; }
+  .login-brand-text { padding: 28px 24px 0; }
+  .login-brand-footer { padding: 0 24px 24px; }
+  .login-form-side { padding: 32px 24px; }
+  .sidebar { padding: 12px; }
+  .sidebar-brand { border: none; padding-bottom: 8px; margin-bottom: 4px; }
+  .nav-grupo { display: none; }
+  .nav-btn.active::before { display: none; }
+  .nav-btn { width: auto; flex: 0 0 auto; }
+  .nav-btn .nav-text { white-space: nowrap; flex: none; }
+  .topbar { padding: 18px 16px 4px; }
+  .topbar-left h1 { font-size: 26px; }
+  .content-body { padding: 12px 16px 32px; }
+}
+@media (max-width: 560px) {
+  .kpi-grid { grid-template-columns: 1fr; }
+  .kpi-card { border-left: none !important; border-top: 1px solid var(--linea); }
+  .kpi-card:first-child { border-top: none; }
+  .role-demo-buttons { grid-template-columns: 1fr; }
+}
